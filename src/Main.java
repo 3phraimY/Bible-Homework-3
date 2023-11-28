@@ -20,21 +20,23 @@ public class Main {
 		long DifferenceInPop = endingPop - startingPop;
 		return (DifferenceInPop / years);
 	}
-	public static long ExponentialGrowth(long startingPop, long endingPop, int years)
+	public static int ExponentialGrowth(long startingPop, long endingPop, int years)
 	{
 		int targetYears = years;
 		int yearsTaken = years + 1;
-		int growthMultiplyRate = 2;
+		int growthMultiplyRate = 20;
 		while(yearsTaken > targetYears)
 		{
 			yearsTaken = 0;
+			growthMultiplyRate -= 1;
 			long currentPop = startingPop;
-			while(currentPop < endingPop)
+			while(currentPop < endingPop  && yearsTaken != 2022)
 			{
-				currentPop = currentPop + currentPop * growthMultiplyRate;
+				//increases population by 1/growthMultiply% rate each time
+				currentPop = currentPop + (currentPop / growthMultiplyRate);
 				yearsTaken++;
 			}
 		}
-		return yearsTaken;
+		return growthMultiplyRate;
 	}
 }
