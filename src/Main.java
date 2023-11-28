@@ -8,7 +8,6 @@ public class Main {
 		System.out.println("Average Population Growth " + AverageGrowth(startingWorldPop,endingWorldPop,2021));
 		System.out.println("Exponential Population Growth " + ExponentialGrowth(startingWorldPop,endingWorldPop,2021));
 		
-		
 		long startingBelieverPop = 13L;
 		long endingBelieverPop = 2380000000L;
 		
